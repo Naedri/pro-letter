@@ -1,20 +1,11 @@
-import { Applicant, Content, Position, Recipient, Subject } from "@/components";
-import type { CoverLetter } from "@/types";
+import { Routes, Route, Navigate } from "react-router-dom";
+import CoverLetterPage from "@/pages/CoverLetterPage";
 
-export interface AppProps {
-  data: CoverLetter;
-}
-
-export default function App({ data }: AppProps) {
+export default function App() {
   return (
-    <div className="cover-letter-container">
-      <main className="main-content">
-        <Applicant applicant={data.applicant} />
-        <Recipient recipient={data.recipient} />
-        <Position position={data.position} date={data.metadata.date} />
-        <Subject position={data.position} />
-        <Content content={data.content} />
-      </main>
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigate to="/cover-letter/john-doe" />} />
+      <Route path="/cover-letter/:fileName" element={<CoverLetterPage />} />
+    </Routes>
   );
 }
