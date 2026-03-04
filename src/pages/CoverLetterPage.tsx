@@ -1,24 +1,11 @@
 import { useParams } from "react-router-dom";
-import { useMemo } from "react";
-import type { CoverLetter } from "@/types";
 import CoverLetterView from "@/components/CoverLetterView";
-
-const modules = import.meta.glob("@/data/cover-letters/*.json", {
-  eager: true
-}) as Record<string, { default: CoverLetter }>;
+import { getCoverLetter } from "@/utils";
 
 export default function CoverLetterPage() {
   const { fileName } = useParams<{ fileName: string }>();
 
-  const data = useMemo(() => {
-    if (!fileName) return null;
-
-    const match = Object.entries(modules).find(([path]) =>
-      path.endsWith(`${fileName}.json`)
-    );
-
-    return match?.[1].default ?? null;
-  }, [fileName]);
+  const data = fileName ? getCoverLetter(fileName) : null;
 
   if (!data) {
     return <div>Cover letter not found.</div>;
