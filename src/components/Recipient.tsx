@@ -5,32 +5,36 @@ export interface RecipientProps {
 }
 
 export function Recipient({ recipient }: RecipientProps) {
-  const { companyName, hiringManagerName, department, address } = recipient;
+  const { companyName, hiringManagerName, department, address, title } =
+    recipient;
 
   return (
     <section className="recipient">
-      <h3 className="recipient__company">{companyName}</h3>
+      <h1 className="recipient__company">{companyName.toUpperCase()}</h1>
 
       {hiringManagerName && (
-        <div className="recipient__manager">{hiringManagerName}</div>
+        <h2 className="recipient__manager">{hiringManagerName}</h2>
       )}
 
-      {department && <div className="recipient__department">{department}</div>}
+      <ul className="recipient__position">
+        {title && <li className="recipient__title">{title}</li>}
+        {department && <li className="recipient__department">{department}</li>}
+      </ul>
 
       {address && (
-        <div className="recipient__address">
+        <ul className="recipient__address">
           {address.street && (
-            <div className="recipient__address-line">{address.street}</div>
+            <li className="recipient__address-item">{address.street}</li>
           )}
           {(address.postalCode || address.city) && (
-            <div className="recipient__address-line">
-              {address.postalCode} {address.city}
-            </div>
+            <li className="recipient__address-item">
+              {[address.postalCode, address.city].join(" ")}
+            </li>
           )}
           {address.country && (
-            <div className="recipient__address-line">{address.country}</div>
+            <li className="recipient__address-item">{address.country}</li>
           )}
-        </div>
+        </ul>
       )}
     </section>
   );

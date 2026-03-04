@@ -5,58 +5,38 @@ export interface ApplicantProps {
 }
 
 export function Applicant({ applicant }: ApplicantProps) {
-  const { firstName, lastName, email, phone, address, linkedIn, website } =
-    applicant;
+  const { firstName, lastName, email, phone, address, title } = applicant;
 
   return (
     <section className="applicant">
       <h2 className="applicant__name">
-        {firstName} {lastName}
+        {firstName} {lastName.toUpperCase()}
       </h2>
 
-      <div className="applicant__contact">
-        <div className="applicant__email">{email}</div>
-        {phone && <div className="applicant__phone">{phone}</div>}
-      </div>
+      <ul className="applicant__position">
+        {title && <li className="applicant__title">{title}</li>}
+      </ul>
+
+      <ul className="applicant__contact">
+        {email && <li className="applicant__email">{email}</li>}
+        {phone && <li className="applicant__phone">{phone}</li>}
+      </ul>
 
       {address && (
-        <div className="applicant__address">
+        <ul className="applicant__address">
           {address.street && (
-            <div className="applicant__address-line">{address.street}</div>
+            <li className="applicant__address-item">{address.street}</li>
           )}
           {(address.postalCode || address.city) && (
-            <div className="applicant__address-line">
-              {address.postalCode} {address.city}
-            </div>
+            <li className="applicant__address-item">
+              {[address.postalCode, address.city].join(" ")}
+            </li>
           )}
           {address.country && (
-            <div className="applicant__address-line">{address.country}</div>
+            <li className="applicant__address-item">{address.country}</li>
           )}
-        </div>
+        </ul>
       )}
-
-      <div className="applicant__links">
-        {linkedIn && (
-          <a
-            href={linkedIn}
-            className="applicant__link applicant__link--linkedin"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
-        )}
-        {website && (
-          <a
-            href={website}
-            className="applicant__link applicant__link--website"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Website
-          </a>
-        )}
-      </div>
     </section>
   );
 }
