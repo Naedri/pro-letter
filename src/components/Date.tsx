@@ -10,8 +10,8 @@ export function Date({ address, date }: PositionProps) {
   const { t } = useTranslation();
 
   return (
-    <section className="date-place">
-      <span className="date-place__content">
+    <section className="date">
+      <span className="date__content">
         {address && address.city
           ? t("date.contentCity", { city: address.city, date })
           : t("date.content", { date })}

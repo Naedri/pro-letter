@@ -1,17 +1,13 @@
 :root {
-  /* light-dark(AAA-PDF-optimized, Dracula theme) */
-  color-scheme: light dark;
-
-  --background-color: light-dark(#ffffff, #282a36);
-  --primary-color: light-dark(#1e3a8a, #bd93f9);
-  --secondary-color: light-dark(#7c2d12, #ff79c6);
-  --tertiary-color: light-dark(#115e59, #8be9fd);
-  --accent-color: light-dark(#14532d, #50fa7b);
-  --button-color: light-dark(#7c2d12, #ffb86c);
-  --icon-color: light-dark(#111111, #f8f8f2);
-  --skeleton-background-color: light-dark(#f3f4f6, #282a36);
-  --skeleton-color: light-dark(#6b7280, #6272a4);
-  --line-color: light-dark(#9ca3af, #6272a4);
+  color-scheme: light;
+  --background-color: light-dark(#ffffff);
+  --primary-color: light-dark(#14532d);
+  --secondary-color: light-dark(#14532d);
+  --tertiary-color: light-dark(#115e59);
+  --accent-color: light-dark(#115e59);
+  --button-color: light-dark(#14532d);
+  --icon-color: light-dark(#7c2d12);
+  --line-color: light-dark(#7c2d12);
   --line-size: 1px;
 
   /* Spacing */

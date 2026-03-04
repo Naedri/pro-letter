@@ -9,16 +9,16 @@ export function Recipient({ recipient }: RecipientProps) {
     recipient;
 
   return (
-    <section className="recipient">
-      <h1 className="recipient__company">{companyName.toUpperCase()}</h1>
+    <div className="recipient">
+      <h2 className="recipient__company">{companyName.toUpperCase()}</h2>
+      {department && <h3 className="recipient__department">{department}</h3>}
 
       {hiringManagerName && (
-        <h2 className="recipient__manager">{hiringManagerName}</h2>
+        <h3 className="recipient__manager">{hiringManagerName}</h3>
       )}
 
       <ul className="recipient__position">
         {title && <li className="recipient__title">{title}</li>}
-        {department && <li className="recipient__department">{department}</li>}
       </ul>
 
       {address && (
@@ -36,6 +36,6 @@ export function Recipient({ recipient }: RecipientProps) {
           )}
         </ul>
       )}
-    </section>
+    </div>
   );
 }

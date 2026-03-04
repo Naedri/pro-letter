@@ -10,12 +10,12 @@ export function Subject({ position }: SubjectProps) {
   return (
     <div className="subject">
       <label className="subject__prefix">{t("subject.prefix")}</label>
-      <p className="subject__main-content">
+      <h1 className="subject__main">
         {t("subject.content", {
           title: position.title,
           reference: position.reference
         })}
-      </p>
+      </h1>
     </div>
   );
 }

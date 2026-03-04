@@ -9,17 +9,15 @@ export function Content({ content }: ContentProps) {
 
   return (
     <section className="content">
-      <p className="content__opening">{opening}</p>
-
       <div className="content__body">
+        <p className="content__opening">{opening}</p>
         {body.map((paragraph, index) => (
           <p key={index} className="content__paragraph">
             {paragraph}
           </p>
         ))}
+        <p className="content__closing">{closing}</p>
       </div>
-
-      <p className="content__closing">{closing}</p>
 
       {signature && <span className="content__signature">{signature}</span>}
     </section>

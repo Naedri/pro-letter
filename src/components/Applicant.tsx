@@ -8,10 +8,10 @@ export function Applicant({ applicant }: ApplicantProps) {
   const { firstName, lastName, email, phone, address, title } = applicant;
 
   return (
-    <section className="applicant">
-      <h2 className="applicant__name">
+    <div className="applicant">
+      <h3 className="applicant__name">
         {firstName} {lastName.toUpperCase()}
-      </h2>
+      </h3>
 
       <ul className="applicant__position">
         {title && <li className="applicant__title">{title}</li>}
@@ -37,6 +37,6 @@ export function Applicant({ applicant }: ApplicantProps) {
           )}
         </ul>
       )}
-    </section>
+    </div>
   );
 }
