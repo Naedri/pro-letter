@@ -1,6 +1,6 @@
 {
-  "object": {
-    "title": "Objet",
+  "subject": {
+    "prefix": "Objet : ",
     "content": "Candidature pour le poste de {{title}} ({{reference}})"
   },
   "date": {

@@ -1,22 +1,21 @@
 import type { CoverLetter } from "@/types";
+import { useTranslation } from "react-i18next";
 
 export interface SubjectProps {
   position: CoverLetter["position"];
 }
 
 export function Subject({ position }: SubjectProps) {
+  const { t } = useTranslation();
   return (
-    <section className="subject">
-      <p className="subject__text">
-        Application for the position of{" "}
-        <strong className="subject__highlight">{position.title}</strong>
-        {position.reference && (
-          <span className="subject__reference">
-            {" "}
-            – Ref: {position.reference}
-          </span>
-        )}
+    <div className="subject">
+      <label className="subject__prefix">{t("subject.prefix")}</label>
+      <p className="subject__main-content">
+        {t("subject.content", {
+          title: position.title,
+          reference: position.reference
+        })}
       </p>
-    </section>
+    </div>
   );
 }
