@@ -1,0 +1,80 @@
+:root {
+  /* light-dark(AAA-PDF-optimized, Dracula theme) */
+  color-scheme: light dark;
+
+  --background-color: light-dark(#ffffff, #282a36);
+  --primary-color: light-dark(#1e3a8a, #bd93f9);
+  --secondary-color: light-dark(#7c2d12, #ff79c6);
+  --tertiary-color: light-dark(#115e59, #8be9fd);
+  --accent-color: light-dark(#14532d, #50fa7b);
+  --button-color: light-dark(#7c2d12, #ffb86c);
+  --icon-color: light-dark(#111111, #f8f8f2);
+  --skeleton-background-color: light-dark(#f3f4f6, #282a36);
+  --skeleton-color: light-dark(#6b7280, #6272a4);
+  --line-color: light-dark(#9ca3af, #6272a4);
+  --line-size: 1px;
+
+  /* Spacing */
+  --spacing-el-xs: 0.25rem;
+  --spacing-el-s: 0.5rem;
+  --spacing-el-m: 0.75rem;
+  --spacing-el-l: 1rem;
+  --spacing-el-xl: 1.25rem;
+  --spacing-indentation: 0.5rem;
+
+  /* Font */
+  --primary-font: "Cambria", "Times New Roman", serif;
+  --font-weight-m: normal;
+  --font-weight-l: bold;
+  --font-weight-xl: 700;
+  --font-size-s: 9.5pt;
+  --font-size-m: 10pt;
+  --font-size-l: 11pt;
+  --font-size-xl: 12pt;
+  --font-size-xxl: 14pt;
+  --font-size-xxxl: 18pt;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Base ---------- */
+
+body {
+  font-family: var(--primary-font);
+  font-size: var(--font-size-m);
+  line-height: 1.5;
+  color: var(--primary-color);
+  background-color: var(--background-color);
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+ul {
+  list-style: none;
+  margin-left: var(--spacing-indentation);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-el-xs);
+}
+
+li {
+  font-size: var(--font-size-s);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
