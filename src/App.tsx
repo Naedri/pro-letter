@@ -4,7 +4,10 @@ import CoverLetterPage from "@/pages/CoverLetterPage";
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/cover-letter/john-doe" />} />
+      {/* Default route */}
+      <Route path="/" element={<Navigate to="/cover-letter/first-one" />} />
+
+      {/* Dynamic cover letter route */}
       <Route path="/cover-letter/:fileName" element={<CoverLetterPage />} />
     </Routes>
   );
