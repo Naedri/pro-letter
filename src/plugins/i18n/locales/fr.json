@@ -5,6 +5,8 @@
   },
   "date": {
     "m": "{{val, DATE_M}}",
-    "today": "Aujourd'hui"
+    "today": "Aujourd'hui",
+    "content": "le {{date}}",
+    "contentCity": "{{city}}, le {{date, DATE_M}}"
   }
 }

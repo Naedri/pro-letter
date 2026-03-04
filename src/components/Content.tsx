@@ -21,7 +21,7 @@ export function Content({ content }: ContentProps) {
 
       <p className="content__closing">{closing}</p>
 
-      {signature && <p className="content__signature">{signature}</p>}
+      {signature && <span className="content__signature">{signature}</span>}
     </section>
   );
 }

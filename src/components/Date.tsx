@@ -1,0 +1,21 @@
+import type { CoverLetter } from "@/types";
+import { useTranslation } from "react-i18next";
+
+export interface PositionProps {
+  address: CoverLetter["applicant"]["address"];
+  date: string;
+}
+
+export function Date({ address, date }: PositionProps) {
+  const { t } = useTranslation();
+
+  return (
+    <section className="date-place">
+      <span className="date-place__content">
+        {address && address.city
+          ? t("date.contentCity", { city: address.city, date })
+          : t("date.content", { date })}
+      </span>
+    </section>
+  );
+}
