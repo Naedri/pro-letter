@@ -1,0 +1,39 @@
+import i18n, { t } from "i18next";
+import { initReactI18next } from "react-i18next";
+import type { Iso8601, Locale, Resources } from "@/types";
+import en from "./locales/en.json";
+import fr from "./locales/fr.json";
+import { parseDate, TODAY } from "@/utils";
+
+const firstLocale: Locale =
+  (import.meta.env.VITE_DOCUMENT_LANG as Locale) ?? "en";
+const altLocale: Locale = firstLocale === "en" ? "fr" : "en";
+
+const resources: Resources = {
+  en: { translation: en },
+  fr: { translation: fr }
+};
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: firstLocale,
+    fallbackLng: firstLocale,
+    interpolation: { escapeValue: false }
+  })
+  .catch((error) => {
+    console.error("Error initializing i18n:", error);
+  });
+
+i18n.services.formatter?.add("DATE_M", (value: Iso8601, lng?: string) => {
+  if (value == TODAY) return t("date.today");
+  const date = parseDate(value);
+  return date.toLocaleDateString(lng, {
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
+  });
+});
+
+export { i18n, firstLocale, altLocale };

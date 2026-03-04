@@ -1,0 +1,10 @@
+{
+  "object": {
+    "title": "Objet",
+    "content": "Candidature pour le poste de {{title}} ({{reference}})"
+  },
+  "date": {
+    "m": "{{val, DATE_M}}",
+    "today": "Aujourd'hui"
+  }
+}
