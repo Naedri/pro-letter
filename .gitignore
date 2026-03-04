@@ -25,3 +25,9 @@ dist-ssr
 
 # Types
 src/types/cover-letter.d.ts
+
+# Env files
+.env
+
+# Private files
+private/*
