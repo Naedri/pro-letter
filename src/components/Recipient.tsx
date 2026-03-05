@@ -9,7 +9,7 @@ export function Recipient({ recipient }: RecipientProps) {
     recipient;
 
   return (
-    <div className="recipient">
+    <div className="recipient stack">
       <h2 className="recipient__company">{companyName.toUpperCase()}</h2>
       {department && <h3 className="recipient__department">{department}</h3>}
 

@@ -7,17 +7,15 @@ export interface CoverLetterViewProps {
 
 export default function CoverLetterView({ data }: CoverLetterViewProps) {
   return (
-    <div className="cover-letter-container">
-      <aside>
-        <section className="aside-actor">
-          <Applicant applicant={data.applicant} />
-          <Recipient recipient={data.recipient} />
-        </section>
-        <Date address={data.applicant.address} date={data.metadata.date} />
-      </aside>
+    <div className="cover-letter-container flow">
+      <header className="header-actor">
+        <Applicant applicant={data.applicant} />
+        <Recipient recipient={data.recipient} />
+      </header>
+      <Date address={data.applicant.address} date={data.metadata.date} />
+      <Subject position={data.position} />
       <main className="main-content">
-        <Subject position={data.position} />
-        <Content content={data.content} />
+        <Content content={data.content} applicant={data.applicant} />
       </main>
     </div>
   );

@@ -10,8 +10,8 @@ export function Content({ content, applicant }: ContentProps) {
   const { website } = applicant;
 
   return (
-    <section className="content">
-      <div className="content__body">
+    <div className="content">
+      <div className="content__body flow">
         <p className="content__opening">{opening}</p>
         {body.map((paragraph, index) => (
           <p key={index} className="content__paragraph">
@@ -31,6 +31,6 @@ export function Content({ content, applicant }: ContentProps) {
           )}
         </div>
       )}
-    </section>
+    </div>
   );
 }

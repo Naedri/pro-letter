@@ -8,7 +8,7 @@ export function Applicant({ applicant }: ApplicantProps) {
   const { firstName, lastName, email, phone, title } = applicant;
 
   return (
-    <div className="applicant">
+    <div className="applicant stack">
       <h3 className="applicant__name">
         {firstName} {lastName.toUpperCase()}
       </h3>
