@@ -191,6 +191,10 @@ a {
 
 /* Print */
 @media print {
+  :root {
+    color-scheme: light;
+  }
+
   html,
   body {
     margin: 0;
