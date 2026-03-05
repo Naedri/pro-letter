@@ -5,7 +5,7 @@ export interface ApplicantProps {
 }
 
 export function Applicant({ applicant }: ApplicantProps) {
-  const { firstName, lastName, email, phone, address, title } = applicant;
+  const { firstName, lastName, email, phone, title } = applicant;
 
   return (
     <div className="applicant">
@@ -18,11 +18,23 @@ export function Applicant({ applicant }: ApplicantProps) {
       </ul>
 
       <ul className="applicant__contact">
-        {email && <li className="applicant__email">{email}</li>}
-        {phone && <li className="applicant__phone">{phone}</li>}
+        {email && (
+          <li className="applicant__email">
+            <a href={`mailto:${email}`}>
+              <span>{email}</span>
+            </a>
+          </li>
+        )}
+        {phone && (
+          <li className="applicant__phone">
+            <a href={`tel:${phone.replaceAll(" ", "")}`}>
+              <span>{phone}</span>
+            </a>
+          </li>
+        )}
       </ul>
 
-      {address && (
+      {/* {address && (
         <ul className="applicant__address">
           {address.street && (
             <li className="applicant__address-item">{address.street}</li>
@@ -36,7 +48,7 @@ export function Applicant({ applicant }: ApplicantProps) {
             <li className="applicant__address-item">{address.country}</li>
           )}
         </ul>
-      )}
+      )} */}
     </div>
   );
 }

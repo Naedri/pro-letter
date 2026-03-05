@@ -1,7 +1,7 @@
 {
   "subject": {
     "prefix": "Subject : ",
-    "content": "Application for the job of {{title}} ({{reference}})"
+    "content": "Application for the job of {{title}} (<ref>{{reference}}</ref>)"
   },
   "date": {
     "m": "{{val, DATE_M}}",

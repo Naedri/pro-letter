@@ -47,10 +47,6 @@
             "country": { "type": "string" }
           }
         },
-        "linkedIn": {
-          "type": "string",
-          "format": "uri"
-        },
         "website": {
           "type": "string",
           "format": "uri"
@@ -97,6 +93,9 @@
           "minLength": 1
         },
         "reference": {
+          "type": "string"
+        },
+        "url": {
           "type": "string"
         },
         "location": {

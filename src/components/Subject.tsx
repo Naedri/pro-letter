@@ -1,5 +1,5 @@
 import type { CoverLetter } from "@/types";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 export interface SubjectProps {
   position: CoverLetter["position"];
@@ -10,11 +10,24 @@ export function Subject({ position }: SubjectProps) {
   return (
     <div className="subject">
       <label className="subject__prefix">{t("subject.prefix")}</label>
+
       <h1 className="subject__main">
-        {t("subject.content", {
-          title: position.title,
-          reference: position.reference
-        })}
+        <Trans
+          i18nKey="subject.content"
+          values={{
+            title: position.title,
+            reference: position.reference
+          }}
+          components={{
+            ref: (
+              <a
+                href={position.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            )
+          }}
+        />
       </h1>
     </div>
   );
