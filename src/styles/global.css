@@ -169,7 +169,7 @@ a {
 .content__signature {
   display: block;
   text-align: right;
-  margin-top: var(--spacing-el-xl);
+  margin-top: calc(var(--spacing-el-xl) * 2);
   font-style: italic;
 }
 
