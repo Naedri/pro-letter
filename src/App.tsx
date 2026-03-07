@@ -5,8 +5,10 @@ export default function App() {
   return (
     <Routes>
       {/* Default route */}
-      <Route path="/" element={<Navigate to="/cover-letter/first-one" />} />
-
+      <Route
+        path="/"
+        element={<Navigate to="/cover-letter/first-one" replace />}
+      />
       {/* Dynamic cover letter route */}
       <Route path="/cover-letter/:fileName" element={<CoverLetterPage />} />
     </Routes>
