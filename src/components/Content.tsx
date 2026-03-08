@@ -14,9 +14,11 @@ export function Content({ content, applicant }: ContentProps) {
       <div className="content__body flow">
         <p className="content__opening">{opening}</p>
         {body.map((paragraph, index) => (
-          <p key={index} className="content__paragraph">
-            {paragraph}
-          </p>
+          <p
+            key={index}
+            className="content__paragraph"
+            dangerouslySetInnerHTML={{ __html: paragraph }}
+          />
         ))}
         <p className="content__closing">{closing}</p>
       </div>
