@@ -1,4 +1,5 @@
 import type { CoverLetter } from "@/types";
+import { letterStyle } from "@/utils";
 import { Trans, useTranslation } from "react-i18next";
 
 export interface SubjectProps {
@@ -15,7 +16,7 @@ export function Subject({ position }: SubjectProps) {
         <Trans
           i18nKey="subject.content"
           values={{
-            title: position.title,
+            title: letterStyle(position.title),
             reference: position.reference
           }}
           components={{

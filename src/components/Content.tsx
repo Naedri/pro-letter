@@ -1,4 +1,5 @@
 import type { CoverLetter } from "@/types";
+import { letterStyle } from "@/utils";
 
 export interface ContentProps {
   content: CoverLetter["content"];
@@ -12,24 +13,24 @@ export function Content({ content, applicant }: ContentProps) {
   return (
     <div className="content">
       <div className="content__body flow">
-        <p className="content__opening">{opening}</p>
+        <p className="content__opening">{letterStyle(opening)}</p>
         {body.map((paragraph, index) => (
           <p
             key={index}
             className="content__paragraph"
-            dangerouslySetInnerHTML={{ __html: paragraph }}
+            dangerouslySetInnerHTML={{ __html: letterStyle(paragraph) }}
           />
         ))}
-        <p className="content__closing">{closing}</p>
+        <p className="content__closing">{letterStyle(closing)}</p>
       </div>
       {signature && (
         <div className="content__signature">
           {website ? (
             <a href={website} target="_blank" rel="noopener noreferrer">
-              <span>{signature}</span>
+              <span>{letterStyle(signature)}</span>
             </a>
           ) : (
-            <span>{signature}</span>
+            <span>{letterStyle(signature)}</span>
           )}
         </div>
       )}
